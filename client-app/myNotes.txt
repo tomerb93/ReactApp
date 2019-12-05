@@ -1,0 +1,72 @@
+- USE CTRL+.
+
+API:
+
+2 Options for API Form validation:
+    - (One used in this course) Fluent Validation:
+        - Install (using nuget) FluentValidation.AspNetCore
+
+    - Data Annotation: A tool to add form validation on the server code:
+        - Go to the application folder, and inside the CRUDs you can add a [Required] inside
+        the command ctor, above any of the props. (you'll need to use some namespace)
+
+Snippets (USE THIS!):
+    - using Snippet generator online you can add snippets which will make your
+    life extremely easy
+
+Creates the table:
+    - public DbSet<Value> Values { get; set; }
+
+Use to create "data migration" and include "switches"
+for Persistence and API:
+    - dotnet ef migrations add InitialCreate -p Persistence/ -s API/
+
+After this we'll have a new folder called 'Migrations' in
+Persistence folder.
+
+If we make any file changes our application automically restarts:
+    - cd API/ (only works inside the context of startup project [API in this case])
+    - dotnet watch run
+
+Adding CORS
+    - add CORS in services in Startup.cs, using addCors()
+    - use CORS in configuration in Startup.cs using useCors()
+
+Deleting the database:
+    - dotnet ef database drop  -p Persistence/ -s API/
+
+CLIENT:
+
+Creating the React app using NPM and with typescript support:
+    - npx create-react-app client-app --use-npm --typescript
+
+Creates a react component named after the file name created:
+    - create new tsx file with name of component
+    - inside of file, type 'rafc'
+
+Allows use of decorators:
+    - in tsconfig.json, add ,"experimentalDecorators": true
+
+Axios:
+    - cd to react app folder
+    - npm i axios
+
+Semantic-UI-React (Angular Material equivalent)
+    - npm i semantic-ui-react
+
+UUID: creates GUIDS
+    - cd to react app folder
+    - npm i uuid
+
+Mobx:
+    - npm install mobx mobx-react-lite
+
+Mobx Developer Tools:
+    - google it, it's a chrome extension
+
+Toasts:
+    - (in client-app) npm install react-toastify
+    - after, import into index.tsx file (check here)
+
+Final Form:
+    - (in client-app) npm install react-final-form final-form
